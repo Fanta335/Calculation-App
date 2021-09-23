@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 
 const Button = (props) => {
-  const { val, size, onClickInput } = props; //onClickOutput
+  const { val, text, size, onClickInput, onClickOutput, onClickClear } = props;
   const [isDown, setDown] = useState(false);
   const handlePressDown = useCallback(() => {
     setDown(true);
@@ -18,11 +18,17 @@ const Button = (props) => {
     height: "60px",
     width: buttonSizeStyle,
     border: "rgba(141,198,242,.3)",
-    fontSize: '2rem'
+    fontSize: "2rem",
   };
+
+  let onClickFunction;
+  if(onClickInput !== undefined) onClickFunction = onClickInput;
+  else if(onClickOutput !== undefined) onClickFunction = onClickOutput;
+  else onClickFunction = onClickClear;
+
   return (
-    <button data-val={val} style={buttonStyle} onMouseDown={handlePressDown} onMouseUp={handlePressUp} onClick={onClickInput}>
-      {props.val}
+    <button data-val={val} style={buttonStyle} onMouseDown={handlePressDown} onMouseUp={handlePressUp} onClick={onClickFunction}>
+      {text}
     </button>
   );
 };

@@ -1,9 +1,12 @@
 import React from "react";
 
-const OutputDisplay = () => {
+const OutputDisplay = (props) => {
+  const { numsOutput } = props;
   return (
     <div style={{ backgroundColor: "yellow" }}>
-      <input type="text" style={{width: "100%"}}/>
+      <div style={{ width: "100%" }}>
+        <div>{numsOutput[0] === "" ? "0" : numsOutput}</div>
+      </div>
     </div>
   );
 };

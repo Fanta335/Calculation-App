@@ -6,15 +6,21 @@ import DisplayArea from "./DisplayArea";
 // import expressionParser from "../utils/parser";
 
 const Container = () => {
-  const [numsInput, setInputNums] = useState([]);
-  const [numsOutput, setOutputNums] = useState([]);
+  const [numsInput, setInputNums] = useState([""]);
+  const [numsOutput, setOutputNums] = useState([""]);
 
   const handleInput = (event) => {
     setInputNums(numsInput + event.target.dataset.val);
   };
 
-  const handleOutput = (event) => {
-    setOutputNums(event.target.dataset.val);
+  const handleOutput = () => {
+    let answer = numsInput;
+    setOutputNums(answer);
+  };
+
+  const handleClear = () => {
+    setInputNums([""]);
+    setOutputNums([""]);
   };
 
   return (
@@ -24,7 +30,7 @@ const Container = () => {
           <DisplayArea numsInput={numsInput} numsOutput={numsOutput} />
         </Grid>
         <Grid item>
-          <ButtonArea onClickInput={handleInput} onClickOutput={handleOutput} />
+          <ButtonArea onClickInput={handleInput} onClickOutput={handleOutput} onClickClear={handleClear} />
         </Grid>
       </Grid>
     </Card>
