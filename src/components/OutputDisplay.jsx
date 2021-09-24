@@ -5,7 +5,7 @@ const OutputDisplay = (props) => {
   return (
     <div style={{ backgroundColor: "yellow" }}>
       <div style={{ width: "100%" }}>
-        <div>{numsOutput[0] === "" ? "0" : numsOutput}</div>
+        <div>{numsOutput === "" ? "0" : numsOutput}</div>
       </div>
     </div>
   );

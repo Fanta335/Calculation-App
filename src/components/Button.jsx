@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 
 const Button = (props) => {
-  const { val, text, size, onClickInput, onClickOutput, onClickClear } = props;
+  const { val, text, size, onClickInput, onClickOutput, onClickClear, onClickDelete } = props;
   const [isDown, setDown] = useState(false);
   const handlePressDown = useCallback(() => {
     setDown(true);
@@ -10,7 +10,7 @@ const Button = (props) => {
     setDown(false);
   }, [setDown]);
   const buttonColorStyle = isDown ? "linear-gradient(145deg, #7fb2da, #97d4ff)" : "linear-gradient(145deg, #97d4ff, #7fb2da)";
-  const buttonSizeStyle = size === "wide" ? "136px" : "60px";
+  const buttonSizeStyle = size === "wide" ? "205px" : "60px";
   const buttonStyle = {
     borderRadius: "15px",
     background: buttonColorStyle,
@@ -24,7 +24,8 @@ const Button = (props) => {
   let onClickFunction;
   if(onClickInput !== undefined) onClickFunction = onClickInput;
   else if(onClickOutput !== undefined) onClickFunction = onClickOutput;
-  else onClickFunction = onClickClear;
+  else if(onClickClear !== undefined) onClickFunction = onClickClear;
+  else onClickFunction = onClickDelete;
 
   return (
     <button data-val={val} style={buttonStyle} onMouseDown={handlePressDown} onMouseUp={handlePressUp} onClick={onClickFunction}>

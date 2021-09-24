@@ -4,7 +4,7 @@ import React from "react";
 import Button from "./Button";
 
 const ButtonArea = (props) => {
-  const { onClickInput, onClickOutput, onClickClear } = props;
+  const { onClickInput, onClickOutput, onClickClear, onClickDelete } = props;
 
   return (
     <div style={{ backgroundColor: "white" }}>
@@ -14,7 +14,7 @@ const ButtonArea = (props) => {
             <Button val={"clear"} text={"AC"} onClickClear={onClickClear} />
           </Grid>
           <Grid item xs={3}>
-            <Button val={"plusMinus"} text={"+/-"} />
+            <Button val={"delete"} text={"⌫"} onClickDelete={onClickDelete} />
           </Grid>
           <Grid item xs={3}>
             <Button val={"%"} text={"%"} onClickInput={onClickInput} />
@@ -66,11 +66,8 @@ const ButtonArea = (props) => {
           </Grid>
         </Grid>
         <Grid item container>
-          <Grid item xs={6}>
+          <Grid item xs={9}>
             <Button val={"0"} text={"0"} size={"wide"} onClickInput={onClickInput} />
-          </Grid>
-          <Grid item xs={3}>
-            <Button val={"."} text={"."} onClickInput={onClickInput} />
           </Grid>
           <Grid item xs={3}>
             <Button val={"="} text={"="} onClickOutput={onClickOutput} />

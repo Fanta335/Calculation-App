@@ -2,9 +2,11 @@ const expressionParser = (expression) => {
   let nums = []; // 数字を入れるためのスタック
   let ops = []; // 演算子を入れるためのスタック
 
+  const operators = ["+", "-", "*", "/", "%"];
+
   for (let i = 0; i < expression.length; i++) {
     // 演算子が来たときの処理
-    if (isNaN(expression[i])) {
+    if (operators.indexOf(expression[i]) !== -1) {
       let currOP = expression[i];
       // 現在の演算子とスタックに入っている演算子の優先順位を比較します。
       // スタックに入っている演算子の方が優先順位が高い時は先に計算します。
@@ -19,7 +21,7 @@ const expressionParser = (expression) => {
     else {
       let number = "";
       // 2桁以上の数字に対応するため、演算子がくるまで文字を結合していきます。
-      while (i < expression.length && !isNaN(expression[i])) {
+      while (i < expression.length && operators.indexOf(expression[i]) === -1) {
         number += expression[i];
         i++;
       }
@@ -38,11 +40,17 @@ const expressionParser = (expression) => {
 
 // スタックから数字を取り出し、受け取った演算子で計算する関数
 const process = (stack, op) => {
-  // 数字のスタックから文字列を取り出しparseIntで数字にします。
-  const right = parseInt(stack.pop());
-  const left = parseInt(stack.pop());
+  // 数字のスタックから文字列を取り出しNumberで数字にします。
+  const right = Number(stack.pop());
+  const left = Number(stack.pop());
 
   let value = 0;
+
+  if(isNaN(left)) {
+    value = right;
+    stack.push(value);
+    return;
+  }
 
   switch (op) {
     case "+":
@@ -55,7 +63,10 @@ const process = (stack, op) => {
       value = left * right;
       break;
     case "/":
-      value = Math.floor(left / right);
+      value = Math.round((left / right) * Math.pow(10, 5)) / Math.pow(10, 5);
+      break;
+    case "%":
+      value = left % right;
       break;
     default:
       console.log("invalid operator");
