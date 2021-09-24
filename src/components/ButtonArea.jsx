@@ -7,7 +7,7 @@ const ButtonArea = (props) => {
   const { onClickInput, onClickOutput, onClickClear, onClickDelete } = props;
 
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div>
       <Grid container spacing={2}>
         <Grid item container>
           <Grid item xs={3}>

@@ -3,8 +3,8 @@ import React from "react";
 const OutputDisplay = (props) => {
   const { numsOutput } = props;
   return (
-    <div style={{ backgroundColor: "yellow" }}>
-      <div style={{ width: "100%" }}>
+    <div>
+      <div style={{textAlign: "right", fontSize: '2rem'}}>
         <div>{numsOutput === "" ? "0" : numsOutput}</div>
       </div>
     </div>

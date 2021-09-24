@@ -13,8 +13,8 @@ const InputDisplay = (props) => {
   });
 
   return (
-    <div style={{ backgroundColor: "green" }}>
-      <div style={{ width: "100%" }}>
+    <div>
+      <div style={{textAlign: "right"}}>
         <div>{numsInput === "" ? "0" : numsToDisplay}</div>
       </div>
     </div>

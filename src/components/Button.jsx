@@ -9,22 +9,23 @@ const Button = (props) => {
   const handlePressUp = useCallback(() => {
     setDown(false);
   }, [setDown]);
-  const buttonColorStyle = isDown ? "linear-gradient(145deg, #7fb2da, #97d4ff)" : "linear-gradient(145deg, #97d4ff, #7fb2da)";
+  const buttonShadowStyle = isDown ? "inset 7px 7px 13px #75b8d9, inset -7px -7px 13px #9ff8ff" : "7px 7px 13px #75b8d9, -7px -7px 13px #9ff8ff";
   const buttonSizeStyle = size === "wide" ? "205px" : "60px";
   const buttonStyle = {
     borderRadius: "15px",
-    background: buttonColorStyle,
-    boxShadow: "6px 6px 12px #78a8ce, -6px -6px 12px #a2e4ff",
+    background: '#8ad8ff',
+    boxShadow: buttonShadowStyle,
     height: "60px",
     width: buttonSizeStyle,
     border: "rgba(141,198,242,.3)",
     fontSize: "2rem",
+    fontFamily: 'Baloo'
   };
 
   let onClickFunction;
-  if(onClickInput !== undefined) onClickFunction = onClickInput;
-  else if(onClickOutput !== undefined) onClickFunction = onClickOutput;
-  else if(onClickClear !== undefined) onClickFunction = onClickClear;
+  if (onClickInput !== undefined) onClickFunction = onClickInput;
+  else if (onClickOutput !== undefined) onClickFunction = onClickOutput;
+  else if (onClickClear !== undefined) onClickFunction = onClickClear;
   else onClickFunction = onClickDelete;
 
   return (

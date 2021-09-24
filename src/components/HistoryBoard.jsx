@@ -9,7 +9,7 @@ const HistroyBoard = (props) => {
 
   return (
     <div>
-      <p>Calculation history</p>
+      <h2>Calculation history</h2>
       <ul>{results}</ul>
     </div>
   );
