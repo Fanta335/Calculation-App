@@ -6,7 +6,7 @@ import InputDisplay from "./InputDisplay";
 import OutputDisplay from "./OutputDisplay";
 
 const DisplayArea = (props) => {
-  const { numsInput, numsOutput } = props;
+  const { textInput, numsOutput } = props;
   return (
     <Box
       style={{
@@ -19,7 +19,7 @@ const DisplayArea = (props) => {
     >
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <InputDisplay numsInput={numsInput} />
+          <InputDisplay textInput={textInput} />
         </Grid>
         <Grid item xs={12}>
           <OutputDisplay numsOutput={numsOutput} />

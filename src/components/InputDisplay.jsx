@@ -1,21 +1,21 @@
 import React from "react";
 
 const InputDisplay = (props) => {
-  const { numsInput } = props;
-  let numsToDisplay = "";
-  const operators = ["+", "-", "*", "/", "%"];
-  numsInput.split('').forEach((val) => {
+  const { textInput } = props;
+  let TextToDisplay = "";
+  const operators = ["+", "-", "×", "÷", "%"];
+  textInput.split('').forEach((val) => {
     if (operators.indexOf(val) !== -1) {
-      numsToDisplay += " " + val + " ";
+      TextToDisplay += " " + val + " ";
     } else {
-      numsToDisplay += val;
+      TextToDisplay += val;
     }
   });
 
   return (
     <div>
       <div style={{textAlign: "right"}}>
-        <div>{numsInput === "" ? "0" : numsToDisplay}</div>
+        <div>{textInput === "" ? "0" : TextToDisplay}</div>
       </div>
     </div>
   );
