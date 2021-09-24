@@ -20,7 +20,7 @@ const ButtonArea = (props) => {
             <Button val={"%"} text={"%"} onClickInput={onClickInput} />
           </Grid>
           <Grid item xs={3}>
-            <Button val={"/"} text={"÷"} onClickInput={onClickInput} />
+            <Button val={"/"} text={"÷"} onClickInput={onClickInput} isOperator={true} />
           </Grid>
         </Grid>
         <Grid item container>
@@ -34,7 +34,7 @@ const ButtonArea = (props) => {
             <Button val={"9"} text={"9"} onClickInput={onClickInput} />
           </Grid>
           <Grid item xs={3}>
-            <Button val={"*"} text={"×"} onClickInput={onClickInput} />
+            <Button val={"*"} text={"×"} onClickInput={onClickInput} isOperator={true} />
           </Grid>
         </Grid>
         <Grid item container>
@@ -48,7 +48,7 @@ const ButtonArea = (props) => {
             <Button val={"6"} text={"6"} onClickInput={onClickInput} />
           </Grid>
           <Grid item xs={3}>
-            <Button val={"-"} text={"-"} onClickInput={onClickInput} />
+            <Button val={"-"} text={"-"} onClickInput={onClickInput} isOperator={true} />
           </Grid>
         </Grid>
         <Grid item container>
@@ -62,7 +62,7 @@ const ButtonArea = (props) => {
             <Button val={"3"} text={"3"} onClickInput={onClickInput} />
           </Grid>
           <Grid item xs={3}>
-            <Button val={"+"} text={"+"} onClickInput={onClickInput} />
+            <Button val={"+"} text={"+"} onClickInput={onClickInput} isOperator={true} />
           </Grid>
         </Grid>
         <Grid item container>
@@ -70,7 +70,7 @@ const ButtonArea = (props) => {
             <Button val={"0"} text={"0"} size={"wide"} onClickInput={onClickInput} />
           </Grid>
           <Grid item xs={3}>
-            <Button val={"="} text={"="} onClickOutput={onClickOutput} />
+            <Button val={"="} text={"="} onClickOutput={onClickOutput} isOperator={true} />
           </Grid>
         </Grid>
       </Grid>
