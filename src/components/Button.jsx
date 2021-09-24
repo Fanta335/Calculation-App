@@ -10,7 +10,7 @@ const Button = (props) => {
     setDown(false);
   }, [setDown]);
   const buttonShadowStyle = isDown ? "inset 7px 7px 13px #75b8d9, inset -7px -7px 13px #9ff8ff" : "7px 7px 13px #75b8d9, -7px -7px 13px #9ff8ff";
-  const buttonSizeStyle = size === "wide" ? "205px" : "60px";
+  const buttonSizeStyle = size === "wide" ? "202px" : "60px";
   const buttonStyle = {
     borderRadius: "15px",
     background: '#8ad8ff',

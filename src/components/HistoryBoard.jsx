@@ -1,3 +1,5 @@
+import { Card } from "@mui/material";
+import { Box } from "@mui/system";
 import React from "react";
 
 const HistroyBoard = (props) => {
@@ -8,10 +10,12 @@ const HistroyBoard = (props) => {
   });
 
   return (
-    <div>
+    <Card sx={{p:2}}>
       <h2>Calculation history</h2>
-      <ul>{results}</ul>
-    </div>
+      <Box sx={{ width: "300px", height: "300px", overflow: "auto" }}>
+        <ul>{results}</ul>
+      </Box>
+    </Card>
   );
 };
 
