@@ -9,7 +9,7 @@ const Button = (props) => {
   const handlePressUp = useCallback(() => {
     setDown(false);
   }, [setDown]);
-  const buttonBackgroundStyle = isOperator ? "#64178e" : "#8ad8ff";
+  const buttonBackgroundStyle = isOperator ? "#1b20a7" : "#8ad8ff";
   const buttonFontColorStyle = isOperator ? "white" : "black";
   const buttonShadowStyle = isDown ? "inset 7px 7px 13px #75b8d9, inset -7px -7px 13px #9ff8ff" : "7px 7px 13px #75b8d9, -7px -7px 13px #9ff8ff";
   const buttonSizeStyle = size === "wide" ? "202px" : "60px";
