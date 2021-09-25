@@ -46,7 +46,9 @@ const CalculationBoard = (props) => {
 
   const handleDelete = () => {
     const newNumsInput = numsInput.substring(0, numsInput.length - 1);
+    const newTextInput = textInput.substring(0, textInput.length - 1);
     setInputNums(newNumsInput);
+    setInputText(newTextInput);
   };
 
   return (
